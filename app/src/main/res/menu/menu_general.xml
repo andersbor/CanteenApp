@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:balloonberry="http://schemas.android.com/apk/res-auto">
+
+    <!-- http://stackoverflow.com/questions/17914017/android-4-3-menu-item-showasaction-always-ignored -->
+
+    <item
+        android:id="@+id/menu_general_action_user"
+        android:title="Login"
+        balloonberry:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_general_action_logout"
+        android:title="Logout"
+        android:visible="false"
+        balloonberry:showAsAction="ifRoom" />
+
+</menu>

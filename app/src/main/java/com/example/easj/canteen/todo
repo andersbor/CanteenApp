@@ -1,0 +1,55 @@
+Generally: scrolling
+
+TakeAwayActivity:
+Combi Time and DatePickerDialog? http://stackoverflow.com/questions/38604157/android-date-time-picker-in-one-dialog
+How to says "thanks" and get back to DishActivity: Dialog? Change button?
+
+DishListActivity: clean up: Remove external Adapter
+
+DishActivity: Login not implemented yet
+
+Menu: About
+
+Customer (database): gender, sporty, age?
+Customer (REST API): gender, sporty, age?
+
+DishActivity: average rating, what if null?
+
+DishActivity: user rates (login check, Preferences).
+RatingBar opfører sig sært på telefon og i emulator
+
+DishActivity: Energy LineChart (Protein, Fat, Carbohydrates, Alco) OR table
+https://github.com/PhilJay/MPAndroidChart/wiki/Getting-Started
+
+DishActivity: user orders takeAway (login check, Preferences) + pickup time dialog
+
+DishListActivity: ListAdapter: pictures must be right aligned
+
+REST Service: should Dish include average rating? Must be enables in REST service (ignored in POST)
+http://stackoverflow.com/questions/13604289/sql-select-for-average-from-another-table
+
+REST Service: should ratings be like: max one (customerid, dishid) pr. day, only the latest rating each day counts?
+http://stackoverflow.com/questions/21208719/update-if-exists-else-insert-in-sql-server-2008
+
+LoginActivity
+RegisterActivity: Includes gender, age, sports?
+http://www.apoteket.dk/KropOgHelbred/Kost/Anbefalinger/De%20nordiske%20n%C3%A6ringsstofanbefalinger.aspx
+
+select CanteenDish.*, temp.averagerating, temp.countrating from CanteenDish join (
+select canteendish.id, avg(rate) as averagerating, count(rate) as countrating
+from canteenDish left JOIN CanteenDishRating on canteendish.id = CanteenDishRating.dishid
+group by canteendish.id) temp on canteendish.id = temp.Id;
+-------------
+DishActivity: show ratings
+DishListActivity: ProgressBar (spinner)
+DishListActivity: auto login (from previous login), menu/button with Name/Login
+DishActivity: show picture, maybe with Picasso. Guard for no picture
+DishListActivity: homemade adapter (price + picture? + checkbox (energy calculation))
+DishListActivity: calculate energy (dialog if no checked checkboxes). Calculate button as a floating button?
+every Activity: large titles/headings
+DishActivity: Title bar + menu (like DishListActivity)
+Menu Logout
+LoginActivity: Preferences
+TakeAwayActivity: AsyncTask POST
+TakeAwayActivity: Nicer layout: including dish info
+
